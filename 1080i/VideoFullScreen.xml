@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <onload>ClearProperty(OSDRelaunchFullscreen,Home)</onload>
+    <onload>ClearProperty(JB.EpisodeAutoPlay,Home)</onload>
     <controls>
         <control type="grouplist" id="0">
             <orientation>vertical</orientation>
