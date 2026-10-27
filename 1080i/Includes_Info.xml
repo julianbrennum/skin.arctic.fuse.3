@@ -778,65 +778,80 @@
 
     <include name="Info_Line_AudioChannels_Resolution">
         <param name="visible">true</param>
+        <!-- JB: object audio from the file name (Radarr/Sonarr naming) or, during playback, Kodi 21's codec profile -->
+        <param name="is_atmos">[String.Contains($PARAM[container]$PARAM[listitem].FileName,atmos) | String.Contains($PARAM[container]$PARAM[listitem].AudioCodec,atmos)]</param>
+        <param name="is_dtsx">[String.Contains($PARAM[container]$PARAM[listitem].FileName,dts-x) | String.StartsWith($PARAM[container]$PARAM[listitem].AudioCodec,dtshd_ma_x) | String.IsEqual($PARAM[container]$PARAM[listitem].AudioCodec,dts_x)]</param>
         <definition>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">ATMOS</param>
+                <param name="visible">$PARAM[visible] + $PARAM[is_atmos]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
+                <param name="label">DTS:X</param>
+                <param name="visible">$PARAM[visible] + !$PARAM[is_atmos] + $PARAM[is_dtsx]</param>
+                <param name="width">auto</param>
+            </include>
+            <include content="Info_Line_Pill_Text">
+                <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">9.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,10)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,10)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">8.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,9)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,9)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">7.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,8)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,8)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">6.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,7)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,7)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">5.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,6)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,6)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">4.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,5)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,5)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">4.0</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,4)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,4)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">2.1</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,3)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,3)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">2.0</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,2)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,2)</param>
                 <param name="width">60</param>
             </include>
             <include content="Info_Line_Pill_Text">
                 <param name="colordiffuse">$PARAM[colordiffuse]</param>
                 <param name="label">1.0</param>
-                <param name="visible">$PARAM[visible] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,1)</param>
+                <param name="visible">$PARAM[visible] + ![$PARAM[is_atmos] | $PARAM[is_dtsx]] + Integer.IsEqual($PARAM[container]$PARAM[listitem].AudioChannels,1)</param>
                 <param name="width">60</param>
             </include>
         </definition>

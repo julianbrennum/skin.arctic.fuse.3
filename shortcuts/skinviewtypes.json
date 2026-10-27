@@ -122,8 +122,8 @@
         "movies": {
             "rule": "Container.Content(movies)",
             "viewtypes": ["501", "502", "503", "504", "505", "506", "509", "511", "512", "513", "514", "516", "580", "581", "582", "583", "584"],
-            "library": "502",
-            "plugins": "502"
+            "library": "512",
+            "plugins": "512"
         },
         "sets": {
             "rule": "Container.Content(sets)",
@@ -134,8 +134,8 @@
         "tvshows": {
             "rule": "!String.IsEqual(Container.Property(param.info),episode_groups) + !String.IsEqual(Container.Property(param.info),episode_group_seasons) + Container.Content(tvshows)",
             "viewtypes": ["501", "502", "503", "504", "505", "506", "509", "511", "512", "513", "514", "516", "521", "522", "524", "526", "527", "528", "580", "581", "582", "583", "584", "551", "552", "554", "556"],
-            "library": "502",
-            "plugins": "502"
+            "library": "511",
+            "plugins": "511"
         },
         "episode-groups-tvshows": {
             "rule": "String.IsEqual(Container.Property(param.info),episode_groups) + Container.Content(tvshows)",
@@ -158,8 +158,8 @@
         "episodes": {
             "rule": "Container.Content(episodes)",
             "viewtypes": ["501", "504", "511", "514", "580", "581", "582", "583", "584"],
-            "library": "501",
-            "plugins": "501"
+            "library": "582",
+            "plugins": "582"
         },
         "videoversions": {
             "rule": "Container.Content(videoversions)",

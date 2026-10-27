@@ -1,12 +1,11 @@
 [
     {
-        "label": "Continue Watching",
+        "label": "Continue TV Shows",
         "icon": "",
         "path": "special://skin/extras/playlists/jb/ContinueShows.xsp",
         "target": "videos",
-        "guid": "guid-64d25117",
-        "widget_style": "Poster",
-        "widget_onclick": "NextUp"
+        "guid": "guid-8431e7f7",
+        "widget_style": "Landscape"
     },
     {
         "label": "Recently Watched",
@@ -14,8 +13,7 @@
         "path": "special://skin/extras/playlists/jb/RecentlyWatchedShows.xsp",
         "target": "videos",
         "guid": "guid-da94f249",
-        "widget_style": "Poster",
-        "widget_onclick": "NextUp"
+        "widget_style": "Landscape"
     },
     {
         "label": "New TV Shows",
@@ -23,7 +21,7 @@
         "path": "special://skin/extras/playlists/jb/NewShows.xsp",
         "target": "videos",
         "guid": "guid-379da81e",
-        "widget_style": "Poster"
+        "widget_style": "Landscape"
     },
     {
         "label": "Top Rated Shows",
@@ -31,7 +29,7 @@
         "path": "special://skin/extras/playlists/jb/TopShows.xsp",
         "target": "videos",
         "guid": "guid-2fd6bc06",
-        "widget_style": "Poster"
+        "widget_style": "Landscape"
     },
     {
         "label": "Random Shows",
@@ -39,6 +37,6 @@
         "path": "special://skin/extras/playlists/jb/RandomShows.xsp",
         "target": "videos",
         "guid": "guid-0d252c0b",
-        "widget_style": "Poster"
+        "widget_style": "Landscape"
     }
 ]

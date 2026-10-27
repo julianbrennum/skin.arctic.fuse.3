@@ -1205,6 +1205,8 @@
         <value condition="Container.Content(albums)">$LOCALIZE[132]</value>
         <value condition="Container.Content(songs)">$LOCALIZE[134]</value>
         <value condition="Container.Content(episodes) + !String.IsEmpty(Container.FolderName) + String.IsEqual(Container.FolderName,Container.ShowTitle)">$LOCALIZE[20360]</value>
+        <!-- JB: in the all-seasons episode list, name the season you're scrolling through -->
+        <value condition="Container.Content(episodes) + String.EndsWith(Container.FolderPath,/-1/) + !String.IsEmpty(ListItem.Season)">$LOCALIZE[20373] $INFO[ListItem.Season]</value>
 
         <!-- Category Labels -->
         <value condition="Window.IsMedia + !String.IsEmpty(Container.PluginCategory)">$INFO[Container.PluginCategory]</value>

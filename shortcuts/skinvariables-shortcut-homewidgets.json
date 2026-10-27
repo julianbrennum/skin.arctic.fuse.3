@@ -1,12 +1,11 @@
 [
     {
-        "label": "Continue Watching",
+        "label": "Recently Added Movies",
         "icon": "",
-        "path": "special://skin/extras/playlists/jb/ContinueShows.xsp",
+        "path": "special://skin/extras/playlists/jb/RecentlyAddedMovies.xsp",
         "target": "videos",
-        "guid": "guid-64d25117",
-        "widget_style": "Poster",
-        "widget_onclick": "NextUp"
+        "guid": "guid-26a72aae",
+        "widget_style": "Poster"
     },
     {
         "label": "Continue Movies",
@@ -17,19 +16,11 @@
         "widget_style": "Landscape"
     },
     {
-        "label": "Recently Added Movies",
+        "label": "Continue TV Shows",
         "icon": "",
-        "path": "special://skin/extras/playlists/jb/RecentlyAddedMovies.xsp",
+        "path": "special://skin/extras/playlists/jb/ContinueShows.xsp",
         "target": "videos",
-        "guid": "guid-26a72aae",
-        "widget_style": "Poster"
-    },
-    {
-        "label": "New Episodes",
-        "icon": "",
-        "path": "special://skin/extras/playlists/NewEpisodes.xsp",
-        "target": "videos",
-        "guid": "guid-1e6ae562",
+        "guid": "guid-8431e7f7",
         "widget_style": "Landscape"
     }
 ]

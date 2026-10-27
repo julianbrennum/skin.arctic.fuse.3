@@ -185,13 +185,6 @@
                 <onclick condition="!String.IsEmpty(ListItem.Property(target))">ActivateWindow($INFO[ListItem.Property(target)],$INFO[ListItem.FolderPath],return)</onclick>
             ]]></value>
         </rule>
-        <!-- JB: TV show rows that open the season you're up to -->
-        <rule>
-            <condition>{item_widget_onclick}==NextUp</condition>
-            <value><![CDATA[
-                <onclick>RunScript(special://skin/extras/scripts/jb_nextup.py,$INFO[ListItem.DBID])</onclick>
-            ]]></value>
-        </rule>
     </rules>
     <rules name="widget_usewidgetlabel">
         <rule>

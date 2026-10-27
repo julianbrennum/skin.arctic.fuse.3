@@ -1438,6 +1438,25 @@
                             <param name="listitem">$PARAM[listitem]</param>
                         </include>
 
+                        <!-- JB: marks where a new season starts in a flattened episode list -->
+                        <control type="group">
+                            <visible>String.IsEqual(ListItem.DBType,episode) + Integer.IsEqual(ListItem.Episode,1)</visible>
+                            <left>12</left>
+                            <top>12</top>
+                            <width>150</width>
+                            <height>40</height>
+                            <control type="image">
+                                <texture colordiffuse="e6ffffff" border="4">flags/blank.png</texture>
+                            </control>
+                            <control type="label">
+                                <label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
+                                <font>font_infotag_bold</font>
+                                <textcolor>ff2a2a2a</textcolor>
+                                <align>center</align>
+                                <aligny>center</aligny>
+                            </control>
+                        </control>
+
                         <include content="Object_TraktOverlays" condition="$PARAM[indicator] + [Skin.HasSetting(Indicator.TraktWatchlist) | Skin.HasSetting(Indicator.TraktFavourites)]">
                             <param name="listitem">$PARAM[listitem]</param>
                         </include>
@@ -1461,7 +1480,28 @@
                                     <font>font_main_bold</font>
                                     <include condition="$PARAM[selected]">Color_SelectedText</include>
                                     <textcolor>main_fg_90</textcolor>
-                                    <right>320</right>
+                                    <right>400</right>
+                                </control>
+                                <!-- JB: rating -->
+                                <control type="group">
+                                    <visible>!String.IsEmpty(ListItem.Rating) + !String.IsEqual(ListItem.Rating,0.0) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie)]</visible>
+                                    <right>300</right>
+                                    <width>90</width>
+                                    <control type="image">
+                                        <left>0</left>
+                                        <centertop>50%</centertop>
+                                        <width>26</width>
+                                        <height>26</height>
+                                        <aspectratio>keep</aspectratio>
+                                        <texture colordiffuse="ffffc107">flags/star10.png</texture>
+                                    </control>
+                                    <control type="label">
+                                        <left>34</left>
+                                        <font>font_mini</font>
+                                        <include condition="$PARAM[selected]">Color_SelectedText</include>
+                                        <textcolor>main_fg_70</textcolor>
+                                        <label>$INFO[ListItem.Rating]</label>
+                                    </control>
                                 </control>
 
                                 <control type="group">

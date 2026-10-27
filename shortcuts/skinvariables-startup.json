@@ -107,6 +107,16 @@
                         "Skin.SetBool(JB.Defaults.1)"
                     ]
                 }],
+                [{
+                    "rules": ["!Skin.HasSetting(JB.Defaults.2)"],
+                    "value": [
+                        "Skin.SetString(HomeSwitcher.1101.Shortcut.Target,videos)",
+                        "Skin.SetString(HomeSwitcher.1101.Shortcut.Path,videodb://movies/titles/)",
+                        "Skin.SetString(HomeSwitcher.1102.Shortcut.Target,videos)",
+                        "Skin.SetString(HomeSwitcher.1102.Shortcut.Path,videodb://tvshows/titles/)",
+                        "Skin.SetBool(JB.Defaults.2)"
+                    ]
+                }],
                 "Skin.SetBool(TMDbHelper.UseLocalWidgetContainer)",
                 "Skin.SetBool(TMDbHelper.DisableExtendedProperties)",
                 "Skin.SetBool(TMDbHelper.EnableCurrentWindowImages)",
