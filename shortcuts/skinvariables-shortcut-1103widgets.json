@@ -1,0 +1,11 @@
+[
+    {
+        "label": "Channels",
+        "icon": "",
+        "path": "plugin://plugin.service.emby-next-gen/?mode=browse&id=93&parentid=93&libraryid=93&content=TvChannel&server=4e98020637b84079b94d86feb257e341&query=TvChannel",
+        "target": "videos",
+        "guid": "guid-1d0e36cb",
+        "widget_style": "Square",
+        "widget_limit": "200"
+    }
+]

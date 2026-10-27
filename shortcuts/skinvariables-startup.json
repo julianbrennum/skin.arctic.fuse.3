@@ -79,6 +79,34 @@
                         "Skin.SetBool(DefaultConfig.InitDone)"
                     ]
                 }],
+                [{
+                    "rules": ["!Skin.HasSetting(JB.Defaults.1)"],
+                    "value": [
+                        "Skin.SetBool(HomeSwitcher.Vertical)",
+                        "Skin.SetBool(Ratings.EnableColor)",
+                        "Skin.SetBool(Hub.Home.DisableSubmenu)",
+                        "Skin.SetString(HomeSwitcher.Home.Spotlight.Path,special://skin/extras/playlists/jb/SpotlightMovies.xsp)",
+                        "Skin.SetString(HomeSwitcher.Home.Spotlight.Target,videos)",
+                        "Skin.SetString(HomeSwitcher.Home.Spotlight.Label,Spotlight)",
+                        "Skin.SetString(HomeSwitcher.1101.Toggle,true)",
+                        "Skin.SetString(HomeSwitcher.1101.Type,Custom)",
+                        "Skin.SetString(HomeSwitcher.1101.Mode,Standard)",
+                        "Skin.SetString(HomeSwitcher.1101.Name,Movies)",
+                        "Skin.SetString(HomeSwitcher.1101.Icon,special://skin/extras/icons/film.png)",
+                        "Skin.SetString(HomeSwitcher.1102.Toggle,true)",
+                        "Skin.SetString(HomeSwitcher.1102.Type,Custom)",
+                        "Skin.SetString(HomeSwitcher.1102.Mode,Standard)",
+                        "Skin.SetString(HomeSwitcher.1102.Name,TV Shows)",
+                        "Skin.SetString(HomeSwitcher.1102.Icon,special://skin/extras/icons/tv.png)",
+                        "Skin.SetString(HomeSwitcher.1103.Toggle,true)",
+                        "Skin.SetString(HomeSwitcher.1103.Type,Custom)",
+                        "Skin.SetString(HomeSwitcher.1103.Mode,Standard)",
+                        "Skin.SetString(HomeSwitcher.1103.Name,Live TV)",
+                        "Skin.SetString(HomeSwitcher.1103.Icon,special://skin/extras/icons/livetv.png)",
+                        "Skin.Reset(HomeSwitcher.1107.Toggle)",
+                        "Skin.SetBool(JB.Defaults.1)"
+                    ]
+                }],
                 "Skin.SetBool(TMDbHelper.UseLocalWidgetContainer)",
                 "Skin.SetBool(TMDbHelper.DisableExtendedProperties)",
                 "Skin.SetBool(TMDbHelper.EnableCurrentWindowImages)",

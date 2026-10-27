@@ -1,0 +1,54 @@
+[
+    {
+        "label": "Recently Added",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/RecentlyAddedMovies.xsp",
+        "target": "videos",
+        "guid": "guid-6a321959",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Top Movies (IMDb)",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/TopMovies.xsp",
+        "target": "videos",
+        "guid": "guid-b979a4f6",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Continue Watching",
+        "icon": "",
+        "path": "special://skin/extras/playlists/InProgressMovies.xsp",
+        "target": "videos",
+        "guid": "guid-99e0c10e",
+        "widget_style": "Landscape"
+    },
+    {
+        "label": "Recently Watched",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/RecentlyWatchedMovies.xsp",
+        "target": "videos",
+        "guid": "guid-11ae0f42",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Random Movies",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/RandomMovies.xsp",
+        "target": "videos",
+        "guid": "guid-75f398a0",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Genres",
+        "icon": "",
+        "path": "videodb://movies/genres/",
+        "target": "videos",
+        "guid": "guid-f3bc1e48",
+        "widget_style": "Poster",
+        "widget_combined": "True",
+        "widget_sortby": "rating",
+        "widget_sortorder": "True",
+        "widget_limit": "30"
+    }
+]

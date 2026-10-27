@@ -1,38 +1,34 @@
 [
     {
-        "label": "On Deck",
+        "label": "Continue Watching",
+        "icon": "",
+        "path": "plugin://plugin.service.emby-next-gen/?mode=nextepisodes&mediatype=episode&libraryname=unknown&server=4e98020637b84079b94d86feb257e341",
+        "target": "videos",
+        "guid": "guid-ba756261",
+        "widget_style": "Landscape"
+    },
+    {
+        "label": "Continue Movies",
         "icon": "",
         "path": "special://skin/extras/playlists/InProgressMovies.xsp",
-        "target": "videos"
+        "target": "videos",
+        "guid": "guid-451ede9b",
+        "widget_style": "Landscape"
     },
     {
-        "label": "In-Progress",
+        "label": "Recently Added Movies",
         "icon": "",
-        "path": "special://skin/extras/playlists/InProgressEpisodes.xsp",
-        "target": "videos"
+        "path": "special://skin/extras/playlists/jb/RecentlyAddedMovies.xsp",
+        "target": "videos",
+        "guid": "guid-26a72aae",
+        "widget_style": "Poster"
     },
     {
-        "label": "New Movies",
+        "label": "New Episodes",
         "icon": "",
-        "path": "special://skin/extras/playlists/NewMovies.xsp",
-        "target": "videos"
-    },
-    {
-        "label": "New Shows",
-        "icon": "",
-        "path": "special://skin/extras/playlists/NewShows.xsp",
-        "target": "videos"
-    },
-    {
-        "label": "Recent Shows",
-        "icon": "",
-        "path": "special://skin/extras/playlists/RecentTvShows.xsp",
-        "target": "videos"
-    },
-    {
-        "label": "Top 250",
-        "icon": "",
-        "path": "special://skin/extras/playlists/Top250Movies.xsp",
-        "target": "videos"
+        "path": "special://skin/extras/playlists/NewEpisodes.xsp",
+        "target": "videos",
+        "guid": "guid-1e6ae562",
+        "widget_style": "Landscape"
     }
 ]

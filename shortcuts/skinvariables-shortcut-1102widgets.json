@@ -1,0 +1,34 @@
+[
+    {
+        "label": "Continue Watching",
+        "icon": "",
+        "path": "plugin://plugin.service.emby-next-gen/?mode=nextepisodes&mediatype=episode&libraryname=unknown&server=4e98020637b84079b94d86feb257e341",
+        "target": "videos",
+        "guid": "guid-ba756261",
+        "widget_style": "Landscape"
+    },
+    {
+        "label": "New TV Shows",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/NewShows.xsp",
+        "target": "videos",
+        "guid": "guid-379da81e",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Top Rated Shows",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/TopShows.xsp",
+        "target": "videos",
+        "guid": "guid-2fd6bc06",
+        "widget_style": "Poster"
+    },
+    {
+        "label": "Random Shows",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/RandomShows.xsp",
+        "target": "videos",
+        "guid": "guid-0d252c0b",
+        "widget_style": "Poster"
+    }
+]
