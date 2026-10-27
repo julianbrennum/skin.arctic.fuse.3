@@ -2,10 +2,20 @@
     {
         "label": "Continue Watching",
         "icon": "",
-        "path": "plugin://plugin.service.emby-next-gen/?mode=nextepisodes&mediatype=episode&libraryname=unknown&server=4e98020637b84079b94d86feb257e341",
+        "path": "special://skin/extras/playlists/jb/ContinueShows.xsp",
         "target": "videos",
-        "guid": "guid-ba756261",
-        "widget_style": "Landscape"
+        "guid": "guid-64d25117",
+        "widget_style": "Poster",
+        "widget_onclick": "NextUp"
+    },
+    {
+        "label": "Recently Watched",
+        "icon": "",
+        "path": "special://skin/extras/playlists/jb/RecentlyWatchedShows.xsp",
+        "target": "videos",
+        "guid": "guid-da94f249",
+        "widget_style": "Poster",
+        "widget_onclick": "NextUp"
     },
     {
         "label": "New TV Shows",
