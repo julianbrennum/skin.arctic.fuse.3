@@ -7,12 +7,13 @@
     <menucontrol>9000</menucontrol>
     <include>DialogInfo_Onload</include>
     <!-- JB: selecting an episode in the library plays it (Kodi's Play still asks Resume / From start) instead of showing info.
-         Cancelling that question makes Kodi reopen this dialog; marker 2 then closes it and refocuses the list instead of
-         pressing Play again; a no-op action a second later gives the list its focus back. VideoFullScreen clears the marker once playback starts.
-         Kodi evaluates each condition as it runs, and some builtins apply immediately, so everything that depends on the
-         marker is scheduled (AlarmClock) or checked before the marker is changed. -->
-    <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEmpty(Window(Home).Property(JB.EpisodeAutoPlay))">SetProperty(JB.EpisodeAutoPlay,1,Home)</onload>
-    <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + !String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">AlarmClock(jb_episode_play,SendClick(movieinformation,8),00:00,silent)</onload>
+         Cancelling that question makes Kodi reopen this dialog; marker 2 then closes it instead of pressing Play again,
+         and a no-op action a second later gives the list its focus back. VideoFullScreen clears the marker on playback.
+         The context menu's "Episode information" sets JB.ShowEpisodeInfo to open this dialog normally.
+         Kodi evaluates each condition as it runs and some builtins apply at once, so the order below matters. -->
+    <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEmpty(Window(Home).Property(JB.ShowEpisodeInfo)) + String.IsEmpty(Window(Home).Property(JB.EpisodeAutoPlay))">SetProperty(JB.EpisodeAutoPlay,1,Home)</onload>
+    <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEmpty(Window(Home).Property(JB.ShowEpisodeInfo)) + !String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">AlarmClock(jb_episode_play,SendClick(movieinformation,8),00:00,silent)</onload>
+    <onload condition="!String.IsEmpty(Window(Home).Property(JB.ShowEpisodeInfo)) + !String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">ClearProperty(JB.ShowEpisodeInfo,Home)</onload>
     <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">AlarmClock(jb_refocus,Action(noop),00:01,silent)</onload>
     <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">AlarmClock(jb_episode_close,Dialog.Close(movieinformation,true),00:00,silent)</onload>
     <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos) + String.IsEqual(Window(Home).Property(JB.EpisodeAutoPlay),2)">ClearProperty(JB.EpisodeAutoPlay,Home)</onload>

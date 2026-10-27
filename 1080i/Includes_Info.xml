@@ -265,11 +265,36 @@
                         <param name="visible">[[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | $PARAM[override_tvshow]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Status))]</param>
                     </include>
 
-                    <!-- Awards -->
-                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData] + String.IsEmpty(Skin.String(CustomRating.Movies.Item03))">
+                    <!-- JB: awards from TMDb Helper (OMDb), always shown when a title has them: wins as ×N, otherwise nominations -->
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
                         <param name="icon">flags/$VAR[Color_Directory]/ratings/oscars.png</param>
-                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),x,]</param>
-                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins))</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),×,]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),0)</param>
+                    </include>
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
+                        <param name="icon">flags/$VAR[Color_Directory]/ratings/oscars.png</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Nominations),, nom.]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | $PARAM[override_movie]] + [String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins)) | String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Wins),0)] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Nominations)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Oscar_Nominations),0)</param>
+                    </include>
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
+                        <param name="icon">flags/$VAR[Color_Directory]/ratings/emmys.png</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Wins),×,]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | $PARAM[override_tvshow]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Wins)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Wins),0)</param>
+                    </include>
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
+                        <param name="icon">flags/$VAR[Color_Directory]/ratings/emmys.png</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Nominations),, nom.]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | $PARAM[override_tvshow]] + [String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Wins)) | String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Wins),0)] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Nominations)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].Emmy_Nominations),0)</param>
+                    </include>
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
+                        <param name="icon">flags/$VAR[Color_Directory]/ratings/goldenglobe.png</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Wins),×,]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | $PARAM[override_movie] | $PARAM[override_tvshow]] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Wins)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Wins),0)</param>
+                    </include>
+                    <include content="Info_Meta_Object" condition="$EXP[Exp_TMDbHelper_IsData]">
+                        <param name="icon">flags/$VAR[Color_Directory]/ratings/goldenglobe.png</param>
+                        <param name="label">$INFO[Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Nominations),, nom.]</param>
+                        <param name="visible">[String.IsEqual($PARAM[container]$PARAM[listitem].DBType,movie) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,season) | String.IsEqual($PARAM[container]$PARAM[listitem].DBType,episode) | $PARAM[override_movie] | $PARAM[override_tvshow]] + [String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Wins)) | String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Wins),0)] + !String.IsEmpty(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Nominations)) + !String.IsEqual(Window(Home).Property(TMDbHelper.$PARAM[service].GoldenGlobe_Nominations),0)</param>
                     </include>
 
                 </control>

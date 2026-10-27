@@ -6,6 +6,10 @@
         <origin x="0" y="0" />
     </coordinates>
     <onload>AlarmClock(Refocus,SetFocus(1001),00:00,silent)</onload>
+    <!-- JB: an info page opened from this menu ("Information", or the tray's episode info) should stay open instead of
+         auto-playing the episode (see DialogVideoInfo); the flag expires shortly after the menu closes -->
+    <onload condition="Window.IsVisible(videos)">SetProperty(JB.ShowEpisodeInfo,1,Home)</onload>
+    <onunload>AlarmClock(jb_episode_info_expire,ClearProperty(JB.ShowEpisodeInfo,Home),00:02,silent)</onunload>
     <controls>
         <include>DialogContextMenu</include>
     </controls>

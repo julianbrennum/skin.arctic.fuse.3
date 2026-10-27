@@ -265,6 +265,15 @@
 
     <!-- Items -->
     <include name="DialogContextMenu_Items">
+        <!-- JB: episodes play on select, so this is the way to their info page -->
+        <item>
+            <label>$LOCALIZE[20352]</label>
+            <icon>special://skin/extras/icons/circle-info.png</icon>
+            <visible>Window.IsVisible(videos) + String.IsEqual(Window(Home).Property(TMDbHelper.ListItem.base_dbtype),episode)</visible>
+            <onclick>SetProperty(JB.ShowEpisodeInfo,1,Home)</onclick>
+            <onclick>Dialog.Close(contextmenu,true)</onclick>
+            <onclick>AlarmClock(jb_episode_info,Action(Info),00:01,silent)</onclick>
+        </item>
         <item>
             <label>$LOCALIZE[207]</label>
             <icon>special://skin/extras/icons/quote.png</icon>
