@@ -6,6 +6,8 @@
     </include>
     <menucontrol>9000</menucontrol>
     <include>DialogInfo_Onload</include>
+    <!-- JB: selecting an episode in the library plays it (Kodi's Play still asks Resume / From start) instead of showing info -->
+    <onload condition="String.IsEqual(ListItem.DBType,episode) + Window.IsVisible(videos)">AlarmClock(jb_episode_play,SendClick(movieinformation,8),00:00,silent)</onload>
     <onload>SetProperty(TMDbHelper.EnableExtendedProperties,True)</onload>
     <onload>ClearProperty(WidgetCombined.5018.Path)</onload>
     <onload>ClearProperty(DialogInfo.Starring.Path)</onload>
